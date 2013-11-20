@@ -1,0 +1,6 @@
+﻿<section id="favorite-view" class="view">
+    <span>Total: </span><span data-bind="text: favorites().length"></span>
+    <ul id="listFavorite" data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: favorites }">
+        @Html.Partial("~/Views/Template/_feed.cshtml")
+    </ul>
+</section>

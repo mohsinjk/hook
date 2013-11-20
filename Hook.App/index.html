@@ -1,0 +1,380 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Project Hook</title>
+
+    <link href="/Content/css?v=N_au5Jx_WSFtWhJqWv8NA46bzpzgoW43l1O56YtRJXo1" rel="stylesheet"/>
+
+    
+
+    <script src="/bundles/modernizr?v=qVODBytEBVVePTNtSFXgRX0NCEjh9U_Oj8ePaSiRcGg1"></script>
+
+</head>
+<body>
+
+    <div data-role="page" id="home">
+    <div data-role="header" data-id="appHeader" data-position="fixed">
+    <h1>Comaround+</h1>
+    <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+    <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+</div>
+
+    <!-- /header -->
+    <div class="nav">
+    <div data-role="navbar"  data-id="nav1">
+        <ul>
+            <li><a href="#home" data-theme="a"  data-transition="slide">Guide Feed</a></li>
+            <li><a href="#people" data-theme="a"  data-transition="slide">Poeple</a></li>
+            <li><a href="#me" data-theme="a"  data-transition="slide">Me</a></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- /navbar -->
+
+    <div data-role="content">
+        <section id="feed-view" class="view">
+    
+    <ul id="listFeed" data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: feeds }">
+        <li><a href="feed.html">
+    <img class="feed-pic" src="/Images/male.png" />
+    <div class="feed-displayName"><span class="feed-fullName" data-bind="text: user.fullName"></span><span class="feed-companyName">@</span><span class="feed-companyName" data-bind="    text: user.companyName"></span></div>
+    <p class="feed-message" data-bind="html: message"></p>
+    <p class="ui-li-aside"><small class="feed-date" data-bind="text: messageDateTime"></small></p>
+    <div class="feed-button">
+        <a data-bind="click: $root.btnForward" data-role="button" data-icon="forward" data-iconpos="notext" data-theme="c" data-inline="true">Forward</a>
+        <a data-bind="click: $root.btnFavorite" data-role="button" data-icon="star" data-iconpos="notext" data-theme="c" data-inline="true">Favorite</a>
+    </div>
+</a></li>
+
+
+
+    </ul>
+</section>
+
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+
+    <div data-role="page" id="people">
+    <div data-role="header" data-id="appHeader" data-position="fixed">
+    <h1>Comaround+</h1>
+    <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+    <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+</div>
+
+    <!-- /header -->
+    <div class="nav">
+    <div data-role="navbar"  data-id="nav1">
+        <ul>
+            <li><a href="#home" data-theme="a"  data-transition="slide">Guide Feed</a></li>
+            <li><a href="#people" data-theme="a"  data-transition="slide">Poeple</a></li>
+            <li><a href="#me" data-theme="a"  data-transition="slide">Me</a></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- /navbar -->
+    <div class="nav-sub">
+        <div data-role="controlgroup" data-theme="c">
+            <a href="#following" data-role="button">Following</a>
+            <a href="#followers" data-role="button">Followers</a>
+        </div>
+        <a href="#connection" data-theme="a" data-role="button" data-rel="dialog">Add Connection</a>
+    </div>
+
+</div>
+
+
+<div data-role="page" id="following">
+    <div data-role="header" data-position="fixed">
+        <h1>Following</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <section id="following-view" class="view">
+    <ul data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: following }">
+        <li><a href="user.html">
+    <img src="/Images/male.png" />
+    <div class="feed-displayName"><span class="feed-fullName" data-bind="text: followUser.fullName"></span><span class="feed-companyName"> @</span><span class="feed-companyName" data-bind="    text: followUser.companyName"></span></div>
+    <p data-bind="text: followUser.email"></p>
+    <p data-bind="text: followUser.phoneNumber"></p>
+    <p data-bind="text: followUser.information"></p>
+</a></li>
+
+    </ul>
+</section>
+
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+<div data-role="page" id="followers">
+    <div data-role="header" data-position="fixed">
+        <h1>Followers</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <section id="followers-view" class="view">
+    <ul data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: followers }">
+        <li><a href="user.html">
+    <img src="/Images/male.png" />
+    <div class="feed-displayName"><span class="feed-fullName" data-bind="text: user.fullName"></span><span class="feed-companyName"> @</span><span class="feed-companyName" data-bind="    text: user.companyName"></span></div>
+    <p data-bind="text: user.email"></p>
+    <p data-bind="text: user.phoneNumber"></p>
+    <p data-bind="text: user.information"></p>
+</a></li>
+
+    </ul>
+</section>
+
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+ <div data-role="page" id="connection" data-rel="back" data-close-btn="right">
+        <div data-role="header">
+            <h1>Connection</h1>
+        </div>
+    <!-- /header -->
+    <div data-role="content">
+        <section id="connection-view" class="view">
+    <label for="message">Add Connection</label>
+    <input type="text" data-bind="value: userName, valueUpdate: 'afterkeydown'"/>
+
+    <a data-role="button" data-bind="click: btnAddConnection, enable: userName().length">Add</a>
+</section>
+
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+    <div data-role="page" id="me">
+    <div data-role="header" data-id="appHeader" data-position="fixed">
+    <h1>Comaround+</h1>
+    <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+    <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+</div>
+
+    <!-- /header -->
+    <div class="nav">
+    <div data-role="navbar"  data-id="nav1">
+        <ul>
+            <li><a href="#home" data-theme="a"  data-transition="slide">Guide Feed</a></li>
+            <li><a href="#people" data-theme="a"  data-transition="slide">Poeple</a></li>
+            <li><a href="#me" data-theme="a"  data-transition="slide">Me</a></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- /navbar -->
+
+    <div class="nav-sub">
+        <div data-role="controlgroup">
+            <a href="#favorite" data-role="button">Favorites</a>
+            <a href="#myFeed" data-role="button">My feed</a>
+            <a href="#profile" data-role="button">Profile</a>
+        </div>
+    </div>
+    <a id="btnLogoff" data-theme="a" data-role="button">Logoff</a>
+    <a id="btnRefresh" data-theme="a" data-role="button">Refresh</a>
+</div>
+
+<div data-role="page" id="myFeed">
+    <div data-role="header" data-position="fixed">
+        <h1>My</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <section id="myFeed-view" class="view">
+    <span>Total: </span><span data-bind="text: myFeeds().length"></span>
+    <ul id="listMyFeed" data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: myFeeds }">
+        <li><a href="feed.html">
+    <img class="feed-pic" src="/Images/male.png" />
+    <div class="feed-displayName"><span class="feed-fullName" data-bind="text: user.fullName"></span><span class="feed-companyName">@</span><span class="feed-companyName" data-bind="    text: user.companyName"></span></div>
+    <p class="feed-message" data-bind="html: message"></p>
+    <p class="ui-li-aside"><small class="feed-date" data-bind="text: messageDateTime"></small></p>
+    <div class="feed-button">
+        <a data-bind="click: $root.btnForward" data-role="button" data-icon="forward" data-iconpos="notext" data-theme="c" data-inline="true">Forward</a>
+        <a data-bind="click: $root.btnFavorite" data-role="button" data-icon="star" data-iconpos="notext" data-theme="c" data-inline="true">Favorite</a>
+    </div>
+</a></li>
+
+
+
+    </ul>
+</section>
+
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+
+<div data-role="page" id="favorite">
+    <div data-role="header" data-position="fixed">
+        <h1>Favorites</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <section id="favorite-view" class="view">
+    <span>Total: </span><span data-bind="text: favorites().length"></span>
+    <ul id="listFavorite" data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: favorites }">
+        <li><a href="feed.html">
+    <img class="feed-pic" src="/Images/male.png" />
+    <div class="feed-displayName"><span class="feed-fullName" data-bind="text: user.fullName"></span><span class="feed-companyName">@</span><span class="feed-companyName" data-bind="    text: user.companyName"></span></div>
+    <p class="feed-message" data-bind="html: message"></p>
+    <p class="ui-li-aside"><small class="feed-date" data-bind="text: messageDateTime"></small></p>
+    <div class="feed-button">
+        <a data-bind="click: $root.btnForward" data-role="button" data-icon="forward" data-iconpos="notext" data-theme="c" data-inline="true">Forward</a>
+        <a data-bind="click: $root.btnFavorite" data-role="button" data-icon="star" data-iconpos="notext" data-theme="c" data-inline="true">Favorite</a>
+    </div>
+</a></li>
+
+
+
+    </ul>
+</section>
+
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+     <div data-role="page" id="write" data-rel="back" data-close-btn="right">
+        <div data-role="header">
+            <h1>Write</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <section id="write-view" class="view">
+    <label for="group">Select Group</label>
+    <div id="group" data-role="controlgroup" data-type="horizontal" data-bind="foreach: groups">
+        <input type="checkbox" data-mini="true" data-bind="attr: { name: id, id: id }, click: $root.selectedGroup">
+        <label data-bind="text: groupName, attr: { for: id }"></label>
+    </div>
+
+    <label for="message">Write something...</label>
+    <textarea cols="40" rows="4" id="message" data-bind="value: messageToAdd, valueUpdate: 'afterkeydown'"></textarea>
+
+    <a data-role="button" data-bind="click: btnAddFeed, enable: messageToAdd().length">Send</a>
+</section>
+
+        </div>
+        <!-- /content -->
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+        <div data-role="page" id="login" data-rel="back" data-close-btn="right">
+        <div data-role="header">
+            <h1>Login</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <section id="login-view" class="view">
+    <form data-bind="submit: login" method="post">
+        <label for="txtUserName">User name:</label>
+        <input type="text" data-clear-btn="true" data-mini="true" required name="txtUserName" id="txtUserName" data-bind="value: enterUserName, valueUpdate: 'afterkeydown' ">
+        <label for="txtPassword">Password:</label>
+        <input type="password" data-clear-btn="true" name="txtPassword" required id="txtPassword" data-bind="value: enterPassword, valueUpdate: 'afterkeydown'" autocomplete="off">
+        <span data-bind="text: alert"  class="alert"></span>
+        <a data-role="button" data-bind="click: login">Login</a>
+        
+    </form>
+    <a href="#register" data-role="button">Register</a>
+</section>
+
+        </div>
+        <!-- /content -->
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+        <div data-role="page" id="register" data-rel="back" data-close-btn="right">
+        <div data-role="header">
+            <h1>Register</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <section id="register-view" class="view">
+
+    <div id="userGeneralInfo" style="display: none">
+        <label for="userName">Full Name:</label>
+        <input type="text" id="fullName" value="">
+
+        <label for="userName">Company Name:</label>
+        <input type="text" id="companyName" value="">
+
+        <label for="phopneNumber">Phone number:</label>
+        <input type="tel" name="phoneName" id="phoneNumber" value="">
+
+        <label for="information">About me:</label>
+        <textarea cols="40" rows="4" id="information"></textarea>
+    </div>
+    <form id="formRegister" method="post" data-bind="submit: registerUser">
+        <fieldset>
+             <legend></legend>
+            <div id="userLoginInfo">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required minlength="5" data-bind="value: userName, valueUpdate: 'afterkeydown'" data-mini="true">
+
+                <label for="password1">Password:</label>
+                <input type="password" id="password" name="password" minlength="8" required data-bind="value: password, valueUpdate: 'afterkeydown'" data-mini="true">
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="password2" name="confirmPassword" minlength="8" required data-mini="true">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="e.g. abc@company.com" data-bind="value: email, valueUpdate: 'afterkeydown'" data-mini="true">
+
+                <label for="invitationCode">Invitation Code:</label>
+                <input type="text" id="invitationCode" name="invitationCode" required data-bind="value: invitationCode, valueUpdate: 'afterkeydown'" data-mini="true">
+            </div>
+            <input type="submit" value="Register" />
+            <a data-role="button" data-rel="back">Cancel</a>
+        </fieldset>
+    </form>
+</section>
+
+        </div>
+        <!-- /content -->
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <!-- javascript================================================== -->
+
+<script src="/bundles/jquery?v=_44cZl51rce37iEloKsyfxWGLf7my3uZa74ewvZ4wts1"></script>
+<script src="/bundles/jquerymobile?v=H2RoyiAXbm6t3W87kirLdAwOLvqh_1hbHtFlKa0NKus1"></script>
+<script src="/bundles/jsextlibs?v=9y_mXnYhPk3lr7CZKSvwxG5kjM5a1tVFonx4sJSul7w1"></script>
+<script src="/Scripts/require.js"></script>
+<script src="/bundles/app_js?v=mFbAP5HuloZ330O2gxvK2Y2lAcYQ0jeGQYIuTTZQjT41"></script>
+<script src="/Scripts/_main.js"></script>
+
+</body>
+</html>

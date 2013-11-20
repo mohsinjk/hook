@@ -1,0 +1,39 @@
+﻿<section id="register-view" class="view">
+
+    <div id="userGeneralInfo" style="display: none">
+        <label for="userName">Full Name:</label>
+        <input type="text" id="fullName" value="">
+
+        <label for="userName">Company Name:</label>
+        <input type="text" id="companyName" value="">
+
+        <label for="phopneNumber">Phone number:</label>
+        <input type="tel" name="phoneName" id="phoneNumber" value="">
+
+        <label for="information">About me:</label>
+        <textarea cols="40" rows="4" id="information"></textarea>
+    </div>
+    <form id="formRegister" method="post" data-bind="submit: registerUser">
+        <fieldset>
+             <legend></legend>
+            <div id="userLoginInfo">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required minlength="5" data-bind="value: userName, valueUpdate: 'afterkeydown'" data-mini="true">
+
+                <label for="password1">Password:</label>
+                <input type="password" id="password" name="password" minlength="8" required data-bind="value: password, valueUpdate: 'afterkeydown'" data-mini="true">
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="password2" name="confirmPassword" minlength="8" required data-mini="true">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="e.g. abc@company.com" data-bind="value: email, valueUpdate: 'afterkeydown'" data-mini="true">
+
+                <label for="invitationCode">Invitation Code:</label>
+                <input type="text" id="invitationCode" name="invitationCode" required data-bind="value: invitationCode, valueUpdate: 'afterkeydown'" data-mini="true">
+            </div>
+            <input type="submit" value="Register" />
+            <a data-role="button" data-rel="back">Cancel</a>
+        </fieldset>
+    </form>
+</section>

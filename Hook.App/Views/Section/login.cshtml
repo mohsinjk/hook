@@ -1,0 +1,12 @@
+﻿<section id="login-view" class="view">
+    <form data-bind="submit: login" method="post">
+        <label for="txtUserName">User name:</label>
+        <input type="text" data-clear-btn="true" data-mini="true" required name="txtUserName" id="txtUserName" data-bind="value: enterUserName, valueUpdate: 'afterkeydown' ">
+        <label for="txtPassword">Password:</label>
+        <input type="password" data-clear-btn="true" name="txtPassword" required id="txtPassword" data-bind="value: enterPassword, valueUpdate: 'afterkeydown'" autocomplete="off">
+        <span data-bind="text: alert"  class="alert"></span>
+        <a data-role="button" data-bind="click: login">Login</a>
+        @*<a data-role="button" data-rel="back">Cancel</a>*@
+    </form>
+    <a href="#register" data-role="button">Register</a>
+</section>

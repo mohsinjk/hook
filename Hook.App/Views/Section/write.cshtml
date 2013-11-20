@@ -1,0 +1,12 @@
+﻿<section id="write-view" class="view">
+    <label for="group">Select Group</label>
+    <div id="group" data-role="controlgroup" data-type="horizontal" data-bind="foreach: groups">
+        <input type="checkbox" data-mini="true" data-bind="attr: { name: id, id: id }, click: $root.selectedGroup">
+        <label data-bind="text: groupName, attr: { for: id }"></label>
+    </div>
+
+    <label for="message">Write something...</label>
+    <textarea cols="40" rows="4" id="message" data-bind="value: messageToAdd, valueUpdate: 'afterkeydown'"></textarea>
+
+    <a data-role="button" data-bind="click: btnAddFeed, enable: messageToAdd().length">Send</a>
+</section>

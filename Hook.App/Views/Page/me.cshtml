@@ -1,0 +1,49 @@
+﻿<div data-role="page" id="me">
+    @Html.Partial("~/Views/Layout/header.cshtml")
+    <!-- /header -->
+    @Html.Partial("~/Views/Layout/nav.cshtml")
+    <!-- /navbar -->
+
+    <div class="nav-sub">
+        <div data-role="controlgroup">
+            <a href="#favorite" data-role="button">Favorites</a>
+            <a href="#myFeed" data-role="button">My feed</a>
+            <a href="#profile" data-role="button">Profile</a>
+        </div>
+    </div>
+    <a id="btnLogoff" data-theme="a" data-role="button">Logoff</a>
+    <a id="btnRefresh" data-theme="a" data-role="button">Refresh</a>
+</div>
+
+<div data-role="page" id="myFeed">
+    <div data-role="header" data-position="fixed">
+        <h1>My</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        @Html.Partial("~/Views/Section/myFeed.cshtml")
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+
+<div data-role="page" id="favorite">
+    <div data-role="header" data-position="fixed">
+        <h1>Favorites</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        @Html.Partial("~/Views/Section/favorite.cshtml")
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->

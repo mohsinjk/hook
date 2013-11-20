@@ -1,0 +1,6 @@
+﻿<section id="connection-view" class="view">
+    <label for="message">Add Connection</label>
+    <input type="text" data-bind="value: userName, valueUpdate: 'afterkeydown'"/>
+
+    <a data-role="button" data-bind="click: btnAddConnection, enable: userName().length">Add</a>
+</section>

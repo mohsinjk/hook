@@ -1,0 +1,6 @@
+﻿<section id="myFeed-view" class="view">
+    <span>Total: </span><span data-bind="text: myFeeds().length"></span>
+    <ul id="listMyFeed" data-role="listview" data-inset="true" data-icon="false" class="ui-icon-alt" data-bind="template: { foreach: myFeeds }">
+        @Html.Partial("~/Views/Template/_feed.cshtml")
+    </ul>
+</section>

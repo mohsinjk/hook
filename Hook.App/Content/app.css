@@ -1,0 +1,64 @@
+﻿.view {
+    padding-top: 20px;
+}
+
+.nav {
+    width: 101%;
+    position: fixed;
+    z-index: 10;
+    top:42px;
+}
+
+.nav-sub {
+    margin-top: 50px;
+}
+
+.alert {
+    color: red;
+}
+
+.feed-button {
+    position: absolute;
+    right: 5px;
+    bottom: -5px;
+}
+
+.feed-message {
+}
+
+.feed-date {
+    position: absolute;
+    right: 10px;
+}
+
+.feed-displayName {
+    margin-bottom: 10px;
+}
+
+.feed-fullName {
+    font-size: x-small;
+}
+
+.feed-companyName {
+    font-size: xx-small;
+    color: gray;
+}
+
+
+
+/*JQM Styles*/
+/*.ui-page {
+    -webkit-backface-visibility: hidden;
+}
+
+li {
+    background: #ffffff !important;
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+}*/
+
+.ui-li-desc.feed-message {
+    white-space: normal;
+    max-width: 98%;
+    min-height: 60px;
+}

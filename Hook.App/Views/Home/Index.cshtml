@@ -1,0 +1,37 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Project Hook</title>
+
+    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/app_css")*@
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    @Html.Partial("~/Views/Page/home.cshtml")
+    @Html.Partial("~/Views/Page/people.cshtml")
+    @Html.Partial("~/Views/Page/me.cshtml")
+    @Html.Partial("~/Views/Page/write.cshtml")
+    @Html.Partial("~/Views/Page/login.cshtml")
+    @Html.Partial("~/Views/Page/register.cshtml")
+
+    <!-- javascript================================================== -->
+
+    @Scripts.Render(
+        "~/bundles/jquery",
+        "~/bundles/jquerymobile",
+        "~/bundles/jsextlibs",
+        "~/Scripts/require.js",
+        "~/bundles/app_js",
+        "~/Scripts/_main.js"
+    )
+</body>
+</html>

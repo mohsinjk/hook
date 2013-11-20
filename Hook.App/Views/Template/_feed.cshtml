@@ -1,0 +1,12 @@
+﻿<li><a href="feed.html">
+    <img class="feed-pic" src="~/Images/male.png" />
+    <div class="feed-displayName"><span class="feed-fullName" data-bind="text: user.fullName"></span><span class="feed-companyName">@@</span><span class="feed-companyName" data-bind="    text: user.companyName"></span></div>
+    <p class="feed-message" data-bind="html: message"></p>
+    <p class="ui-li-aside"><small class="feed-date" data-bind="text: messageDateTime"></small></p>
+    <div class="feed-button">
+        <a data-bind="click: $root.btnForward" data-role="button" data-icon="forward" data-iconpos="notext" data-theme="c" data-inline="true">Forward</a>
+        <a data-bind="click: $root.btnFavorite" data-role="button" data-icon="star" data-iconpos="notext" data-theme="c" data-inline="true">Favorite</a>
+    </div>
+</a></li>
+
+

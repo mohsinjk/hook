@@ -1,0 +1,59 @@
+﻿<div data-role="page" id="people">
+    @Html.Partial("~/Views/Layout/header.cshtml")
+    <!-- /header -->
+    @Html.Partial("~/Views/Layout/nav.cshtml")
+    <!-- /navbar -->
+    <div class="nav-sub">
+        <div data-role="controlgroup" data-theme="c">
+            <a href="#following" data-role="button">Following</a>
+            <a href="#followers" data-role="button">Followers</a>
+        </div>
+        <a href="#connection" data-theme="a" data-role="button" data-rel="dialog">Add Connection</a>
+    </div>
+
+</div>
+
+
+<div data-role="page" id="following">
+    <div data-role="header" data-position="fixed">
+        <h1>Following</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        @Html.Partial("~/Views/Section/following.cshtml")
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+
+<div data-role="page" id="followers">
+    <div data-role="header" data-position="fixed">
+        <h1>Followers</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Back</a>
+        <a href="#write" data-rel="dialog" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" data-transition="slidedown">Write</a>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        @Html.Partial("~/Views/Section/followers.cshtml")
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
+ <div data-role="page" id="connection" data-rel="back" data-close-btn="right">
+        <div data-role="header">
+            <h1>Connection</h1>
+        </div>
+    <!-- /header -->
+    <div data-role="content">
+        @Html.Partial("~/Views/Section/connection.cshtml")
+    </div>
+    <!-- /content -->
+    <!-- /footer -->
+</div>
+<!-- /page -->
